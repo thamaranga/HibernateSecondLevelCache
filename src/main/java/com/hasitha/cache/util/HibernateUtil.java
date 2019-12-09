@@ -27,9 +27,11 @@ public class HibernateUtil {
                 settings.put(Environment.SHOW_SQL, "true");
                 //settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 settings.put(Environment.HBM2DDL_AUTO, "update");
-                //Below two annotations are used for enabling hibernate second level cache
+                //Below two properties are used for enabling hibernate second level cache
                 settings.put(Environment.USE_SECOND_LEVEL_CACHE,true);
                 settings.put(Environment.CACHE_REGION_FACTORY,"org.hibernate.cache.ehcache.EhCacheRegionFactory");
+                //Below property is used for enabling query cache in hibernate second level cache.
+                settings.put(Environment.USE_QUERY_CACHE,true);
                 configuration.setProperties(settings);
 
                 configuration.addAnnotatedClass(Student.class);

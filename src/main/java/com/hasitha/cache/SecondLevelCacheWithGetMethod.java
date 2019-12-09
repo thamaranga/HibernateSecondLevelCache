@@ -3,12 +3,14 @@ package com.hasitha.cache;
 import com.hasitha.cache.entity.Student;
 import com.hasitha.cache.util.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
+
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class SecondLevelCacheWithGetMethod
 {
     public static void main( String[] args )
     {
@@ -34,6 +36,9 @@ public class App
             session2.close();
 
             System.out.println("Session2 end...");
+
+
+            
 
         }catch(Exception ex){
             System.out.println("ex "+ex.getMessage());
